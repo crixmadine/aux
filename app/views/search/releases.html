@@ -1,0 +1,27 @@
+<div>
+	 <!-- Partial for artistData directive -->
+   <h2 ng-show="artist.name" class="artist-name">{{artist.name}}</h2>
+   <div ng-show="artist.name"></div>
+   <input ng-show="artist.name" ng-model="album" class="form-control input-lg" placeholder="Filter by release name" />
+   <div>
+     <div ng-controller="VersionsCtrl" ng-repeat="release in releases | filter:album | filter:year | filter:{ role:'main' }" class="list-group search-results" >
+      <a ng-click="getReleaseVersions()" class="release list-group-item clearfix">
+        <span class="pull-left"><img ng-src="{{release.thumb}}" width="100" height="100" /></span>
+        <span style="line-height: 100px; overflow:hidden;"> 
+          
+          <span class="release-title">{{release.title}}</span>
+          <span class="down-arrow pull-right"><i class="fa fa-chevron-down"></i></span>
+        </span>
+        
+      </a>
+      <div ng-repeat="version in versions | orderBy: format" class="list-group toggle">
+        <a ng-href="#/search/release/{{version.id}}" class="list-group-item">
+          {{version.format}} - {{version.label}} - {{version.catno}} - {{version.country}} - {{version.released}}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

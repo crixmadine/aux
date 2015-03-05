@@ -1,0 +1,10 @@
+<h4>Discogs Search</h4>
+<div class="dropdown search"> 
+  <input type="text" class="form-control input-lg" placeholder="Search Artist Name..." ng-model="name" ng-focus="reset()">     
+  <ul class="dropdown-menu" ng-init="clicked=true" ng-hide="clicked" ng-cloak>
+    <li ng-repeat="result in results" ng-click="getArtistReleases(result.id)"><a>{{result.title}}</a></li>
+  </ul>
+</div>
+<artist-data></artist-data> 
+
+

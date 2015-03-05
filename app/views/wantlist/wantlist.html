@@ -1,0 +1,7 @@
+<h4>Discogs Wantlist</h4>
+<div ng:repeat="want in wants | orderBy:['basic_information.artists[0].name','basic_information.title']" class="list-group toggle-fade">
+  <a ng-href="#/wantlist/release/{{want.id}}" class="list-group-item">
+  	<span><i class="fa fa-chevron-right pull-right"></i></span>
+    {{want.basic_information.artists[0].name}} - {{want.basic_information.title}} ({{want.basic_information.formats[0].descriptions[0]}})
+  </a>
+</div>

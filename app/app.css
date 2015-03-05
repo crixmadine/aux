@@ -1,0 +1,114 @@
+/* app css stylesheet */
+
+/* This is an override of mobile-angular-ui base css setting overflow to hidden. Why? */
+body, html {
+  overflow: auto;
+}
+
+/* 
+All html elements (including their children) that are tagged 
+with the ngCloak directive are hidden with this style. Prevents
+screen flicker of binding expressions {{ }}.
+*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.page {
+  margin-top: 55px;
+  /* important for smooth view transition animations */
+  position:absolute;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.page a {
+  color: #000;
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.navbar {
+  margin-bottom: 14px;
+}
+
+.navbar-nav {
+  margin: 4px -4px;
+}
+
+.list-group {
+  margin-bottom: 0px;
+}
+
+.back-arrow {
+  margin-bottom: 10px;
+}
+
+.back-arrow i {
+  margin-top: 3px;
+}
+
+.release img {
+  margin-right: 12px;
+}
+
+.release-title {
+  font-size: 22px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1em; /*set line height back to normal*/
+}
+
+.release-notes a {
+  text-decoration: underline;
+}
+
+.down-arrow {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.release-detail-image {
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.artist-name {
+  margin-top: 12px;
+  margin-left: 20px;
+}

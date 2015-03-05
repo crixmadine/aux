@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="auxApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Wantlist App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-hover.min.css" />
+  <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css" />
+  <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.min.css" />
+  <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.min.css" />
+  <!-- TODO: two different 3rd party CSS3 animation libraries to evaluate -->
+  <!-- TODO: copy only what I need into animations.css below and delete the above 3rd party libraries -->
+  <link rel="stylesheet" href="ng-animation.css">
+  <link rel="stylesheet" href="animate.css">
+  
+  <link rel="stylesheet" href="animations.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top" role="navigation" ng-controller="NavBarCtrl">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" ng-click="isCollapsed=!isCollapsed">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">AUX</a>
+    </div>
+    <div class="navbar-collapse" ng-class="{collapse: isCollapsed}">
+      <ul class="nav navbar-nav">
+        <li ng-click="isCollapsed=!isCollapsed" ng-class="{active: isActive('/wantlist')}">
+          <a href="#/wantlist">Wantlist</a>
+        </li>
+        <li ng-click="isCollapsed=!isCollapsed" ng-class="{active: isActive('/search')}">
+          <a href="#/search">Search</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="container page {{ pageClass }}" autoscroll="true" ng-view></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="components/angular-animate.js"></script>
+  <script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers.js"></script>
+  <script src="services.js"></script>
+  <script src="views/wantlist/wantlist.js"></script>
+  <script src="views/search/search.js"></script>
+  <script src="views/release/release.js"></script>
+  <script src="directives.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+
+</body>
+</html>

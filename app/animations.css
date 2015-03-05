@@ -1,0 +1,149 @@
+/* view transition animations */
+.page.ng-leave  { z-index:9999; }
+.page.ng-enter  { z-index:8888; }
+
+.page-wantlist.ng-leave {
+  -webkit-animation:slideOutLeft 0.3s both ease-in;
+  -moz-animation:slideOutLeft 0.3s both ease-in;
+  animation:slideOutLeft 0.3s both ease-in;   
+}
+
+/* TODO: fade in instead */
+.page-wantlist.ng-enter {  
+  -webkit-animation:slideInLeft 0.3s both ease-in;
+  -moz-animation:slideInLeft 0.3s both ease-in;
+  animation:slideInLeft 0.3s both ease-in;    
+}
+
+.page-search.ng-leave {
+  -webkit-animation:slideOutLeft 0.3s both ease-in;
+  -moz-animation:slideOutLeft 0.3s both ease-in;
+  animation:slideOutLeft 0.3s both ease-in;   
+}
+
+/* TODO: fade in instead */
+.page-search.ng-enter {  
+  -webkit-animation:slideInLeft 0.3s both ease-in;
+  -moz-animation:slideInLeft 0.3s both ease-in;
+  animation:slideInLeft 0.3s both ease-in;    
+}
+
+.page-release.ng-leave {
+  -webkit-animation:slideOutRight 0.3s both ease-in;
+  -moz-animation:slideOutRight 0.3s both ease-in;
+  animation:slideOutRight 0.3s both ease-in;   
+}
+.page-release.ng-enter {  
+  -webkit-animation:slideInRight 0.3s both ease-in;
+  -moz-animation:slideInRight 0.3s both ease-in;
+  animation:slideInRight 0.3s both ease-in;    
+}
+
+
+/* slide out to left */
+@keyframes slideOutLeft {
+  to { transform: translateX(-100%); }
+}
+@-moz-keyframes slideOutLeft {  
+  to { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideOutLeft {
+  to { -webkit-transform: translateX(-100%); }
+}
+
+/* slide out to right */
+@keyframes slideOutRight {
+  to { transform: translateX(100%); }
+}
+@-moz-keyframes slideOutRight {  
+  to { -moz-transform: translateX(100%); }
+}
+@-webkit-keyframes slideOutRight {
+  to { -webkit-transform: translateX(100%); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from  { transform:translateX(100%); }
+  to    { transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+  from  { -moz-transform:translateX(100%); }
+  to    { -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+  from  { -webkit-transform:translateX(100%); }
+  to    { -webkit-transform: translateX(0); }
+}
+
+/* slide in from the left */
+@keyframes slideInLeft {
+  from  { transform:translateX(-100%); }
+  to    { transform: translateX(0); }
+}
+@-moz-keyframes slideInLeft {
+  from  { -moz-transform:translateX(-100%); }
+  to    { -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInLeft {
+  from  { -webkit-transform:translateX(-100%); }
+  to    { -webkit-transform: translateX(0); }
+}
+
+/* Toggle Fade  
+/* ------------------------------------------- */
+.toggle-fade {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+
+.toggle-fade.ng-enter {
+  opacity: 0;
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+}
+
+.toggle-fade.ng-enter-active {
+  opacity: 1;
+}
+
+.toggle-fade.ng-leave {
+  opacity: 1;
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+}
+
+.toggle-fade.ng-leave-active {
+  opacity: 0;
+}
+
+.toggle-fade.ng-hide-add {
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+
+.toggle-fade.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+
+.toggle-fade.ng-hide-remove {
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+
+.toggle-fade.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}

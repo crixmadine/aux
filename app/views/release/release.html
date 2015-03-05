@@ -1,0 +1,57 @@
+<div class="back-arrow">
+  <a ng-href="{{ backLink }}">
+    <span><i class="fa fa-chevron-left pull-left"></i></span>
+    <span>BACK</span>
+  </a>
+</div>
+<div ng-show="showReleaseDetails">
+  <div class="clearfix">
+    <div class="pull-left release-detail-image">
+      <img img-preload class="fade" ng-src="{{ releaseDetails.thumb }}" width="200" height="200" />
+    </div>
+    <div class="pull-left release-detail" ng-cloak>
+    	<div><strong>Artist:</strong> {{ releaseDetails.artists[0].name }}</div>
+      <div><strong>Title:</strong> {{ releaseDetails.title }}</div>
+      <div><strong>Label:</strong> {{ releaseDetails.labels[0].name }}</div>
+      <div><strong>Cat Num:</strong> {{ releaseDetails.labels[0].catno }}</div>
+      <div><strong>Format:</strong> {{ releaseDetails.formats[0].descriptions[0] }}</div>
+      <div><strong>Year:</strong> {{ releaseDetails.year }}</div>
+      <div><strong>Country:</strong> {{ releaseDetails.country }}</div>
+    </div>
+  </div>
+  <div ng-cloak>
+    <div><strong>Notes:</strong><br/><span class="release-notes" ng-bind-html="notes"></span></div>
+    <p/>
+    <div><strong>{{ marketDataMsg }}</strong></div>
+    <p/>
+    <div class="table-responsive price-table" ng-show="showTable">
+      <table class="table">
+        <thead>
+          <tr>
+            <td></td>
+            <td><strong>Lowest</strong></td>
+            <td><strong>Average</strong></td>
+            <td><strong>Highest</strong></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="marketDataItem in marketData">
+            <td><strong>{{ marketDataItem.currency }}</strong></td>
+            <td>{{ marketDataItem.lowestPrice | localizePrice : marketDataItem.currency }}</td>
+            <td>{{ marketDataItem.avgPrice | localizePrice : marketDataItem.currency }}</td>
+            <td>{{ marketDataItem.highestPrice | localizePrice : marketDataItem.currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div ng-cloak>
+      <button ng-show="showAddBtn" ng-click="addReleaseToWantlist(releaseDetails.id)" type="button" class="btn btn-primary">Add to Wantlist</button>
+      <button ng-show="showDeleteBtn" ng-click="deleteReleaseFromWantlist(releaseDetails.id)" type="button" class="btn btn-danger">Delete from Wantlist</button>
+      <br/>
+      <br/>
+    </div>
+  </div>
+</div>
+<div ng-show="showErrorMsg">
+  <h4>You had a problem connecting to Discogs. Please refresh to try again.</h4>
+</div>
